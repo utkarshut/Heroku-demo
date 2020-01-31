@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Chartbusters Prediction : Foretell The Popularity Of Songs</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" name="Comments" placeholder="Comments" required="required" />
+        <input type="number" name="Likes" placeholder="Likes" required="required" />
+    <input type="number" name="Popularity" placeholder="Popularity" required="required" />
+    <input type="number" name="Followers" placeholder="Followers" required="required" />
+    <input type="date" name="date" placeholder="song release date">
+    <select name="Genre" required>
+      <option value="Genre_alternativerock">alternativerock</option>
+      <option value="Genre_ambient">ambient</option>
+      <option value="Genre_classical">classical</option>
+      <option value="Genre_country">country</option>
+      <option value="Genre_danceedm">danceedm</option>
+      <option value="Genre_deephouse">deephouse</option>
+      <option value="Genre_drumbass">drumbass</option>
+      <option value="Genre_dubstep">dubstep</option>
+      <option value="Genre_disco">disco</option>
+      <option value="Genre_electronic">electronic</option>
+      <option value="Genre_folksingersongwriter">folksingersongwriter</option>
+      <option value="Genre_hiphoprap">hiphoprap</option>
+      <option value="Genre_indie">indie</option>
+      <option value="Genre_latin">latin</option>
+      <option value="Genre_metal">metal</option>
+      <option value="Genre_pop">pop</option>
+      <option value="Genre_reggaeton">reggaeton</option>
+      <option value="Genre_rbsoul">rbsoul</option>
+      <option value="Genre_rock">rock</option>
+      <option value="Genre_trap">trap</option>
+    </select>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

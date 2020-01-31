@@ -21,8 +21,9 @@
         <input type="number" name="Likes" placeholder="Likes" required="required" />
     <input type="number" name="Popularity" placeholder="Popularity" required="required" />
     <input type="number" name="Followers" placeholder="Followers" required="required" />
-    <input type="date" name="date" placeholder="song release date">
-    <select name="Genre" required>
+    <input type="date" name="date" placeholder="song release date" required="required" min="2018-01-30" max="2020-01-30">
+    <select name="Genre" required="required">
+      <option value="">-- Select Genre --</option>
       <option value="Genre_alternativerock">alternativerock</option>
       <option value="Genre_ambient">ambient</option>
       <option value="Genre_classical">classical</option>
@@ -51,6 +52,17 @@
    <br>
    {{ prediction_text }}
 
+ </div>
+ <div>
+   <ul>
+     <b>NOTE :</b>
+     <li>
+      All the Fields are mandatory.
+     </li>
+     <li>
+      Date field takes input of song release date
+     </li>
+   </ul>
  </div>
 
 
